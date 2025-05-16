@@ -103,6 +103,15 @@ export function readConfiguration<T>(setting: AllSettings, defaultValue?: T | un
 export function isAffectedSettingSelected(affectedSetting: AffectedSettings) {
   return readConfiguration<boolean>(affectedSetting, false);
 }
+function collectSideBarSettings(backgroundHex: string) {
+  const sideBarSettings = {} as ISettingsIndexer;
+
+  if (isAffectedSettingSelected(AffectedSettings.SideBar)) {
+    sideBarSettings[ColorSettings.sideBar_background] = backgroundHex;
+  }
+
+  return sideBarSettings;
+}
 
 export function prepareColors(backgroundHex: string) {
   const keepForegroundColor = getKeepForegroundColor();
@@ -120,6 +129,9 @@ export function prepareColors(backgroundHex: string) {
 
   const accentBorderSettings = collectAccentBorderSettings(backgroundHex);
 
+  // Add this to where other settings are merged
+  const sideBarSettings = collectSideBarSettings(backgroundHex);
+
   const statusBarSettings = collectStatusBarSettings(backgroundHex, keepForegroundColor);
 
   // Merge all color settings
@@ -129,6 +141,7 @@ export function prepareColors(backgroundHex: string) {
     ...statusBarSettings,
     ...accentBorderSettings,
     ...squigglyBeGoneSettings,
+    ...sideBarSettings,
   };
 
   const newColorCustomizations = sortSettingsIndexer(mergedSettings);

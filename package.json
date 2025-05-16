@@ -195,6 +195,11 @@
           "default": false,
           "description": "Specifies whether Peacock should affect the panel border."
         },
+        "peacock.affectSideBar": {
+          "type": "boolean",
+          "default": false,
+          "description": "Specifies whether Peacock should affect the sideBar border."
+        },
         "peacock.affectSideBarBorder": {
           "type": "boolean",
           "default": false,
