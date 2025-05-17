@@ -44,6 +44,7 @@ export enum Commands {
   resetWorkspaceColors = 'peacock.resetWorkspaceColors',
   saveColorToFavorites = 'peacock.saveColorToFavorites',
   showAndCopyCurrentColor = 'peacock.showAndCopyCurrentColor',
+  affectSideBarBackground = 'peacock.affectSideBarBackground',
   showDocumentation = 'peacock.docs',
 }
 

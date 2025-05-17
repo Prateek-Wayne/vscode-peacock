@@ -107,6 +107,11 @@
         "command": "peacock.changeColorOfLiveShareGuest",
         "title": "Change Live Share Color (Guest)",
         "category": "Peacock"
+      },
+      {
+        "command": "peacock.affectSideBarBackground",
+        "title": "Set SideBar Darkness Level",
+        "category": "Peacock"
       }
     ],
     "keybindings": [
